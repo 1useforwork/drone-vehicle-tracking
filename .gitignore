@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Logs and Outputs
+*.log
+*.csv
+
+# Model Files
+*.pt
+*.onnx
+
+# MacOS
+.DS_Store
+
+# Ultralytics and YOLO training output
+runs/
