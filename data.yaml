@@ -1,4 +1,4 @@
-train: C:/Users/iampr/Desktop/Drone intern/datasets/images/train
-val: C:/Users/iampr/Desktop/Drone intern/datasets/images/train  # or a separate val folder if you have one
+train: datasets/images/train
+val: datasets/images/train  # or a separate val folder if you have one
 nc: 1
 names: ['vehicle']
