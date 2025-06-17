@@ -17,7 +17,30 @@ label_train_dir = os.path.join(base_path, "labels", "train")
 label_val_dir = os.path.join(base_path, "labels", "val")
 
 # Create directories if not exist
-for folder in [img_train_dir, img_val_dir, label_train_dir, label_val_dir]:
+for folder in [img_train_dir, img_val_dir, laimport os
+import subprocess
+
+# Paths
+synthetic_weights = "runs/detect/train7/weights/best.pt"
+real_data_yaml = "real_data.yaml"  # You need to create this YAML pointing to real drone footage annotations
+epochs = 50
+
+# Check if synthetic model exists
+if os.path.exists(synthetic_weights):
+    print("🧠 Synthetic training complete. Starting fine-tuning on real-world data...")
+
+    # Run YOLO training with real-world data
+    subprocess.run([
+        "yolo", "task=detect", "mode=train",
+        f"model={synthetic_weights}",
+        f"data={real_data_yaml}",
+        f"epochs={epochs}",
+        "imgsz=640",
+        "name=finetune_real"
+    ])
+else:
+    print("❌ Synthetic model weights not found. Please train the base model first.")
+bel_train_dir, label_val_dir]:
     os.makedirs(folder, exist_ok=True)
 
 def create_dummy_image_and_label(img_path, label_path):

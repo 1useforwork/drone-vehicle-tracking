@@ -1,4 +1,12 @@
-train: C:/Users/iampr/Desktop/Drone intern/datasets/images/train
-val: C:/Users/iampr/Desktop/Drone intern/datasets/images/train  # or a separate val folder if you have one
-nc: 1
-names: ['vehicle']
+names:
+  0: car
+  1: bus
+  2: truck
+  3: bike
+  4: van
+  5: motorbike
+  6: pedestrian
+nc: 7
+path: C:/Users/iampr/Downloads/Data for training
+train: images/train
+val: images/val
