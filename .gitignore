@@ -16,3 +16,12 @@ __pycache__/
 
 # Ultralytics and YOLO training output
 runs/
+
+# Local virtual environment
+.venv/
+
+# Dataset (large files)
+dataset-2/
+*.jpg
+*.jpeg
+*.png
